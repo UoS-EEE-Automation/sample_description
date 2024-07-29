@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="sample" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sample_description)/urdf/macros/sample_description.xacro"/>
+  <xacro:sample prefix="sample"/>
+
+</robot>

@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+  <xacro:macro name="sample" params="prefix">
+
+    <link
+      name="${prefix}_link">
+      <inertial>
+        <origin
+          xyz="0.45 -0.00755288531230509 0.0473884206090767"
+          rpy="0 0 0" />
+        <mass
+          value="2.92121390225348" />
+        <inertia
+          ixx="0.00929569153304035"
+          ixy="1.40286947694262E-19"
+          ixz="1.10604587017575E-17"
+          iyy="0.25267545132111"
+          iyz="1.50246773197814E-05"
+          izz="0.243489223920843" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/base_link.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.7 0.7 0.7 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/base_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link
+      name="${prefix}_link_1">
+      <inertial>
+        <origin
+          xyz="0.5 0.0117058323319057 0"
+          rpy="0 0 0" />
+        <mass
+          value="0.178143544526173" />
+        <inertia
+          ixx="6.28316928884838E-06"
+          ixy="-8.65103153110836E-21"
+          ixz="3.60783095971129E-21"
+          iyy="0.0148484085831109"
+          iyz="-1.52625291028132E-21"
+          izz="0.0148484653405402" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/link_1.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.9 0.9 0.9 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/link_1.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <joint
+      name="${prefix}_joint_0"
+      type="fixed">
+      <origin
+        xyz="-0.05 -0.149 -0.015"
+        rpy="1.5708 0 0" />
+      <parent
+        link="${prefix}_link" />
+      <child
+        link="${prefix}_link_1" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
+
+    <link
+      name="${prefix}_link_2">
+      <inertial>
+        <origin
+          xyz="0.45 -0.0074268735083938 0.149"
+          rpy="0 0 0" />
+        <mass
+          value="6.02057134903313" />
+        <inertia
+          ixx="0.0789233607443859"
+          ixy="-1.52599167558668E-17"
+          ixz="-3.71215305561653E-17"
+          iyy="0.580521870403104"
+          iyz="1.30929883986448E-16"
+          izz="0.50183004851347" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/link_2.STL" />
+        </geometry>
+        <material
+          name="">
+          <color
+            rgba="0.7 0.7 0.7 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://sample_description/meshes/link_2.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <joint
+      name="${prefix}_joint_1"
+      type="fixed">
+      <origin
+        xyz="0.95 0.015 0.149"
+        rpy="3.1416 0 3.1416" />
+      <parent
+        link="${prefix}_link_1" />
+      <child
+        link="${prefix}_link_2" />
+      <axis
+        xyz="0 0 0" />
+    </joint>
+
+  </xacro:macro>
+
+</robot>
