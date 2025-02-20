@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="sample_6636-04" params="prefix">
+    
+    <link name="${prefix}_link_1">
+      <visual>
+        <geometry>
+          <box size="0.183 0.134 0.04"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.0915 -0.067 0.02"/>
+        <material
+          name="">
+          <color
+            rgba="0.6 0.6 0.6 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="${prefix}_weld_link">
+      <visual>
+        <geometry>
+          <box size="0.183 0.032 0.04"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.0915 -0.016 0.02"/>
+        <material
+          name="">
+          <color
+            rgba="0.75 0.75 0.75 1" />
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_joint_1" type="fixed">
+      <parent link="${prefix}_link_1"/>
+      <child link="${prefix}_weld_link"/>
+      <origin rpy="0 0 0" xyz="0 -0.134 0"/>
+    </joint>
+
+    <link name="${prefix}_link_2">
+      <visual>
+        <geometry>
+          <box size="0.183 0.134 0.04"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0.0915 -0.067 0.02"/>
+        <material
+          name="">
+          <color
+            rgba="0.6 0.6 0.6 1" />
+        </material>
+      </visual>
+    </link>
+
+    <joint name="${prefix}_joint_2" type="fixed">
+      <parent link="${prefix}_weld_link"/>
+      <child link="${prefix}_link_2"/>
+      <origin rpy="0 0 0" xyz="0 -0.032 0"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

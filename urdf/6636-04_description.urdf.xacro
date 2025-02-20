@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<robot name="plate6636-04" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find sample_description)/urdf/macros/6636-04_description.xacro"/>
+  <xacro:sample_6636-04 prefix="sample_6636-04"/>
+
+</robot>
